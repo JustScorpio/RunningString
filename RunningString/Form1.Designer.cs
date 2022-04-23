@@ -29,9 +29,11 @@ namespace RunningString
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxRunningString = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxStaticString = new System.Windows.Forms.TextBox();
             this.buttonRun = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // textBoxRunningString
@@ -43,14 +45,14 @@ namespace RunningString
             this.textBoxRunningString.Size = new System.Drawing.Size(246, 26);
             this.textBoxRunningString.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxStaticString
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(12, 60);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 167);
-            this.textBox1.TabIndex = 1;
+            this.textBoxStaticString.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxStaticString.Location = new System.Drawing.Point(12, 60);
+            this.textBoxStaticString.Multiline = true;
+            this.textBoxStaticString.Name = "textBoxStaticString";
+            this.textBoxStaticString.Size = new System.Drawing.Size(246, 167);
+            this.textBoxStaticString.TabIndex = 1;
             // 
             // buttonRun
             // 
@@ -60,6 +62,12 @@ namespace RunningString
             this.buttonRun.TabIndex = 2;
             this.buttonRun.Text = "RUN!";
             this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -67,7 +75,7 @@ namespace RunningString
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 285);
             this.Controls.Add(this.buttonRun);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxStaticString);
             this.Controls.Add(this.textBoxRunningString);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -79,8 +87,9 @@ namespace RunningString
         #endregion
 
         private System.Windows.Forms.TextBox textBoxRunningString;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxStaticString;
         private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
